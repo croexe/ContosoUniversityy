@@ -11,6 +11,6 @@ namespace ContosoUniversity.ViewModels
         [DataType(DataType.Date)]
         public DateTime? EnrollmentDate { get; set; }
 
-        public int StudentGroup { get; set; }
+        public int StudentCount { get; set; }
     }
 }
