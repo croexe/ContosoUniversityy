@@ -16,7 +16,7 @@ namespace ContosoUniversity.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Student
-        public ViewResult Index(string sortOrder string searchString)
+        public ViewResult Index(string sortOrder, string searchString)
         {
             var request = Request;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
