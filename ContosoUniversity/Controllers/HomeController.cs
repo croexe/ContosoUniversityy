@@ -28,8 +28,8 @@ namespace ContosoUniversity.Controllers
                                                        EnrollmentDate = dateGroup.Key,
                                                        StudentCount = dateGroup.Count()
                                                    };
-
-            return View();
+            
+            return View(data);
         }
 
         public ActionResult Contact()

@@ -156,6 +156,14 @@
     <Compile Include="Migrations\201903261050247_InitialCreate.Designer.cs">
       <DependentUpon>201903261050247_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903261418531_MaxLengtOnNames.cs" />
+    <Compile Include="Migrations\201903261418531_MaxLengtOnNames.Designer.cs">
+      <DependentUpon>201903261418531_MaxLengtOnNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903261429380_FromatingStudentEntity.cs" />
+    <Compile Include="Migrations\201903261429380_FromatingStudentEntity.Designer.cs">
+      <DependentUpon>201903261429380_FromatingStudentEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
@@ -175,6 +183,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\ContosoUniversityy - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -235,6 +244,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903261050247_InitialCreate.resx">
       <DependentUpon>201903261050247_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261418531_MaxLengtOnNames.resx">
+      <DependentUpon>201903261418531_MaxLengtOnNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261429380_FromatingStudentEntity.resx">
+      <DependentUpon>201903261429380_FromatingStudentEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
