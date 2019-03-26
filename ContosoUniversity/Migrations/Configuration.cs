@@ -1,15 +1,21 @@
-﻿using ContosoUniversity.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Web;
-
-namespace ContosoUniversity.DAL
+namespace ContosoUniversity.Migrations
 {
-    public class SchoolInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<SchoolContext>
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    using ContosoUniversity.Models;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<ContosoUniversity.DAL.SchoolContext>
     {
-        protected override void Seed(SchoolContext context)
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+        }
+
+        protected override void Seed(ContosoUniversity.DAL.SchoolContext context)
         {
             var students = new List<Student>
             {
@@ -98,21 +104,18 @@ namespace ContosoUniversity.DAL
                  }
             };
 
-            foreach(Enrollment e in enrollments)
+            foreach (Enrollment e in enrollments)
             {
                 var enrollmentInDataBase = context.Enrollments.Where(
                     s =>
                         s.Student.ID == e.StudentID &&
                         s.Course.CourseID == e.CourseID).SingleOrDefault();
-                if(enrollmentInDataBase == null)
+                if (enrollmentInDataBase == null)
                 {
                     context.Enrollments.Add(e);
                 }
             }
             context.SaveChanges();
-
-
-
         }
     }
 }
