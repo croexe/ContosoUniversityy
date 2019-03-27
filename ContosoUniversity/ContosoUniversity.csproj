@@ -164,12 +164,16 @@
     <Compile Include="Migrations\201903261429380_FromatingStudentEntity.Designer.cs">
       <DependentUpon>201903261429380_FromatingStudentEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903270953244_CoplexModel.cs" />
+    <Compile Include="Migrations\201903270953244_CoplexModel.Designer.cs">
+      <DependentUpon>201903270953244_CoplexModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Instructor.cs" />
-    <Compile Include="Models\OfficeAssigment.cs" />
+    <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EnrollmentDataGroup.cs" />
@@ -253,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903261429380_FromatingStudentEntity.resx">
       <DependentUpon>201903261429380_FromatingStudentEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270953244_CoplexModel.resx">
+      <DependentUpon>201903270953244_CoplexModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

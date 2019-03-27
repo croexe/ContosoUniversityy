@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ContosoUniversity.Models
 {
-    public class OfficeAssigment
+    public class OfficeAssignment
     {
         [Key]
         [ForeignKey("Instructor")]
