@@ -31,13 +31,31 @@ namespace ContosoUniversity.Controllers
                 viewModel.Courses = viewModel.Instructors.FirstOrDefault(
                     i => i.ID == id.Value).Courses;
             }
-
+            
             if (courseID.HasValue)
             {
                 ViewBag.CourseID = courseID.Value;
-                viewModel.Enrollments = viewModel.Courses.FirstOrDefault(
-                    x => x.CourseID == courseID).Enrollments;
+                var selectedCourse = viewModel.Courses.FirstOrDefault(x => x.CourseID == courseID);
+                db.Enrollments.Where(e => e.CourseID == selectedCourse.CourseID).Load();
+                foreach(Enrollment enrollment in selectedCourse.Enrollments)
+                {
+                    db.Enrollments.Select(x => x.Student ).Load();
+                }
+                viewModel.Enrollments = selectedCourse.Enrollments;
             }
+            /*
+            if (courseID.HasValue)
+            {
+                ViewBag.CourseID = courseID.Value;
+
+                var selectedCourse = viewModel.Courses.Where(x => x.CourseID == courseID).Single();
+                db.Entry(selectedCourse).Collection(x => x.Enrollments).Load();
+                foreach(Enrollment enrollment in selectedCourse.Enrollments)
+                {
+                    db.Entry(enrollment).Reference(x => x.Student).Load();
+                }
+                viewModel.Enrollments = selectedCourse.Enrollments;
+            }*/
 
             return View(viewModel);
         }
