@@ -170,6 +170,10 @@
     <Compile Include="Migrations\201903270953244_CoplexModel.Designer.cs">
       <DependentUpon>201903270953244_CoplexModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903281103191_DepartmentSP.cs" />
+    <Compile Include="Migrations\201903281103191_DepartmentSP.Designer.cs">
+      <DependentUpon>201903281103191_DepartmentSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
@@ -274,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903270953244_CoplexModel.resx">
       <DependentUpon>201903270953244_CoplexModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903281103191_DepartmentSP.resx">
+      <DependentUpon>201903281103191_DepartmentSP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
