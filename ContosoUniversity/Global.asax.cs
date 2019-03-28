@@ -11,7 +11,7 @@ using ContosoUniversity.DAL;
 
 namespace ContosoUniversity
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {

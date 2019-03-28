@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ContosoUniversity.Models
 {
-    public class Instructor
+    public class Instructor : Person
     {
 
         [DataType(DataType.Date)]
