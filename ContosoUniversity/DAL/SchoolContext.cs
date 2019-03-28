@@ -36,6 +36,8 @@ namespace ContosoUniversity.DAL
 
             modelBuilder.Entity<Instructor>()
                 .HasOptional(p => p.OfficeAssigment).WithRequired(p => p.Instructor);
+
+            modelBuilder.Entity<Department>().MapToStoredProcedures();
         }
 
     }
