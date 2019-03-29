@@ -19,7 +19,7 @@ namespace ContosoUniversity.Controllers
 
         public ActionResult About()
         {
-
+            /*
             IQueryable<EnrollmentDataGroup> data = from student in db.Students
                                                    group student by student.EnrollmentDate
                                                    into dateGroup
@@ -28,8 +28,15 @@ namespace ContosoUniversity.Controllers
                                                        EnrollmentDate = dateGroup.Key,
                                                        StudentCount = dateGroup.Count()
                                                    };
-            
-            return View(data);
+                                                    */
+            string query = "SELECT EnrollmentDate, COUNT(*) AS StudentCount "
+                + "FROM Person " +
+                "WHERE Discriminator = 'Student' " +
+                "GROUP BY EnrollmentDate";
+            IEnumerable<EnrollmentDataGroup> data = db.Database.SqlQuery<EnrollmentDataGroup>(query);
+
+
+            return View(data.ToList());
         }
 
         public ActionResult Contact()
