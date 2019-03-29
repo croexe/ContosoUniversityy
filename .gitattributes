@@ -39,7 +39,7 @@
 # behavior for image files
 #
 ###############################################################################
-static/* linguist-vendored
+ContosoUniversityy/Scripts/* linguist-vendored=false
 # image files are treated as binary by default.
 ###############################################################################
 #*.jpg   binary
