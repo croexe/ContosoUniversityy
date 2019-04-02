@@ -8,6 +8,8 @@ using System.Web.Routing;
 using System.Data.Entity.Infrastructure.Interception;
 
 using ContosoUniversity.DAL;
+using AutoMapper;
+using ContosoUniversity.App_Start;
 
 namespace ContosoUniversity
 {
@@ -15,12 +17,14 @@ namespace ContosoUniversity
     {
         protected void Application_Start()
         {
+            Mapper.Initialize( c => c.AddProfile<MappingProfile>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DbInterception.Add(new SchoolInterceptorTransientErrors());
             DbInterception.Add(new SchoolInterceptorLogging());
+
         }
     }
 }

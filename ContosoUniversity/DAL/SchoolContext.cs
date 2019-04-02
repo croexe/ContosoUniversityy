@@ -35,7 +35,7 @@ namespace ContosoUniversity.DAL
                 .ToTable("CourseInstructor"));
 
             modelBuilder.Entity<Instructor>()
-                .HasOptional(p => p.OfficeAssigment).WithRequired(p => p.Instructor);
+                .HasOptional(p => p.OfficeAssignment).WithRequired(p => p.Instructor);
 
             modelBuilder.Entity<Department>().MapToStoredProcedures();
         }

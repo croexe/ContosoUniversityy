@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace ContosoUniversity.Models
+namespace ContosoUniversity.Dtos
 {
-    public class Instructor : Person
+    public class InstructorDto : PersonDto
     {
 
         [DataType(DataType.Date)]
@@ -15,7 +14,8 @@ namespace ContosoUniversity.Models
         [Display(Name = "Hire Date")]
         public DateTime HireDate { get; set; }
 
-        public virtual ICollection<Course> Courses { get; set; }
-        public virtual OfficeAssignment OfficeAssignment { get; set; }
+        public virtual ICollection<CourseDto> CoursesDto { get; set; }
+        public virtual OfficeAssignmentDto OfficeAssignmentDto { get; set; }
+
     }
 }

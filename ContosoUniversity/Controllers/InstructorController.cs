@@ -22,7 +22,7 @@ namespace ContosoUniversity.Controllers
         {
             var viewModel = new InstructorIndexData();
             viewModel.Instructors = db.Instructors
-                .Include(i => i.OfficeAssigment)
+                .Include(i => i.OfficeAssignment)
                 .Include(i => i.Courses.Select(c => c.Department))
                 .OrderBy(i => i.LastName);
 
@@ -122,7 +122,7 @@ namespace ContosoUniversity.Controllers
             }
 
             Instructor instructor = db.Instructors
-                .Include(i => i.OfficeAssigment)
+                .Include(i => i.OfficeAssignment)
                 .Include(i => i.Courses)
                 .Where(i => i.ID == id)
                 .Single();
@@ -166,7 +166,7 @@ namespace ContosoUniversity.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var instructorToUpdate = db.Instructors
-                .Include(i => i.OfficeAssigment)
+                .Include(i => i.OfficeAssignment)
                 .Include(i => i.Courses)
                 .Where(i => i.ID == id)
                 .Single();
@@ -176,9 +176,9 @@ namespace ContosoUniversity.Controllers
             {
                 try
                 {
-                    if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssigment.Location))
+                    if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment.Location))
                     {
-                        instructorToUpdate.OfficeAssigment = null;
+                        instructorToUpdate.OfficeAssignment = null;
                     }
 
                     UpdateInstructorCourses(selectedCourses, instructorToUpdate);
@@ -247,7 +247,7 @@ namespace ContosoUniversity.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Instructor instructor = db.Instructors
-                .Include(i => i.OfficeAssigment)
+                .Include(i => i.OfficeAssignment)
                 .Where(i => i.ID == id)
                 .Single();
 
